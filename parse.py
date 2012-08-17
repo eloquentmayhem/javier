@@ -24,7 +24,11 @@ commands = [("n", navigation.go, ["north"]),
             ("east", navigation.go, ["east"]),
             ("west", navigation.go, ["west"]),
             ("south", navigation.go, ["south"]),
-            ("go $", navigation.go, [])]
+            ("go $", navigation.go, []),
+            ("take $", navigation.take, []),
+            ("drop $", navigation.drop, []),
+            ("info $", navigation.info, []),
+            ("curse God", navigation.smite, [])]
 
 # Given a line of input, look for and execute a matching command. If you can't,
 # might as well make fun of the player.
@@ -65,5 +69,3 @@ def try_command(command, line):
     # Finished parsing. Now call the command's function with all the args we found.
     func(*args)
     return True
-    
-    
