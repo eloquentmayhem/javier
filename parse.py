@@ -3,11 +3,12 @@ function. There are lots of fancy things we could do here but for now I tried
 to keep it simple. Look at "commands" below for the syntax to add a new command
 """
 
-import navigation
+import player
+import world
 
 """ Each command is a format string, followed by a function to call, followed by
-extra arguments to give to that function. For example the command ("n", navigation.go, ["north"])
-means that if the player types "n" we will execute navigation.go("north")
+extra arguments to give to that function. For example the command ("n", player.player.go_direction, ["north"])
+means that if the player types "n" we will execute player.player.go_direction("north")
 
 A format string is some text the player has to type in, with a wildcard (dollar sign) in places where
 they can substitute in arbitrary text. For example the take command could be "take $", because you
@@ -16,21 +17,22 @@ argument for each wildcard. These arguments all go after the ones specified in t
 
 Do not put two wildcards right next to each other, though separating them by a space is ok.
 """
-commands = [("n", navigation.go, ["north"]),
-            ("e", navigation.go, ["east"]),
-            ("w", navigation.go, ["west"]),
-            ("s", navigation.go, ["south"]),
-            ("north", navigation.go, ["north"]),
-            ("east", navigation.go, ["east"]),
-            ("west", navigation.go, ["west"]),
-            ("south", navigation.go, ["south"]),
-            ("go $", navigation.go, []),
-            # These don't seem like they belong in navigation? Can't
-            # you do stuff like like ("take $", module.player.take) here?
-            ("take $", navigation.take, []),
-            ("drop $", navigation.drop, []),
-            ("info $", navigation.info, []),
-            ("curse God", navigation.smite, [])]
+
+#bug in parser -> When you type nooo (or anything starting with a n, actually)
+#it assumes it's a direction?
+commands = [("n", player.player.go_direction, ["north"]),
+            ("e", player.player.go_direction, ["east"]),
+            ("w", player.player.go_direction, ["west"]),
+            ("s", player.player.go_direction, ["south"]),
+            ("north", player.player.go_direction, ["north"]),
+            ("east", player.player.go_direction, ["east"]),
+            ("west", player.player.go_direction, ["west"]),
+            ("south", player.player.go_direction, ["south"]),
+            ("go $", player.player.go_direction, []),
+            ("take $", player.player.take_item, []),
+            ("drop $", player.player.drop_item, []),
+            ("info $", world.world.print_info, []),
+            ("quit", exit, [])]
 
 # Given a line of input, look for and execute a matching command. If you can't,
 # might as well make fun of the player.
