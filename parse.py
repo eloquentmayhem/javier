@@ -70,6 +70,8 @@ def try_command(command, line):
         # Extract the wildcard text
         args = args + [before]
         line = after
+    if line != "":
+        return False
     # Finished parsing. Now call the command's function with all the args we found.
     func(*args)
     return True
