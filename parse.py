@@ -25,6 +25,8 @@ commands = [("n", navigation.go, ["north"]),
             ("west", navigation.go, ["west"]),
             ("south", navigation.go, ["south"]),
             ("go $", navigation.go, []),
+            # These don't seem like they belong in navigation? Can't
+            # you do stuff like like ("take $", module.player.take) here?
             ("take $", navigation.take, []),
             ("drop $", navigation.drop, []),
             ("info $", navigation.info, []),

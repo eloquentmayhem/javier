@@ -3,6 +3,7 @@ import module
 def go(direction):
     module.player.go_direction(direction)
     
+# See comment in parse.py. I don't think most of these belong here?
 def take(item):
     module.player.take_item(item)
     

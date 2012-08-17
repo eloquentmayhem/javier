@@ -1,3 +1,7 @@
+# Putting everything in one file named "classes" gets REALLY scary messy when
+# programs get bigger. Better to put different classes in different files.
+# You can start off doing this the Java-esque way where each class gets its own file,
+# then later if you want you can group related classes into the same file.
 import descriptions
 
 class Container(object):
@@ -13,6 +17,7 @@ class Container(object):
     def delete_elem(self, item):
         for i in xrange(len(self.items)):
             currentItem = self.items[i]
+            # Ah! Commented-out code! Good to remove this before committing.
  #           print("current Item: "+currentItem.name + "item: " + item)
             if (currentItem == item):
                     self.items.remove(currentItem)
@@ -27,6 +32,8 @@ class Container(object):
                 return True
         return False
         
+    # I think you can make have_elem/delete_elem more consise by rewriting them
+    # in terms of find_elem
     def find_elem(self, item):
         for i in xrange(len(self.items)):
             currentItem = self.items[i]
@@ -48,6 +55,8 @@ class Item(object):
     def is_mutable(self):
         return self.mutable
         
+    # Having a function called "get<blah>" print stuff is weird. Better to either
+    # return the description or rename to print_description
     def get_description(self):
         print(self.description)
                     
@@ -74,6 +83,8 @@ class Room(Container):
 class Player(Container):
     def __init__(self, name, description):
         super(Player, self).__init__(name, description)
+        # Does this belong in Player? I feel like this more part of the world
+        # than part of the player.
         #######Rooms Here#############
         dorm = Room("Javier's Dorm", descriptions.dorm)
         dorm.add_elem(Item("Wine Bottle", descriptions.wine, True))
@@ -103,6 +114,7 @@ class Player(Container):
         
     def go_direction(self, direction):
         targetRoom = self.currentRoom.get_door(direction)
+        # Use "targetRoom is None". Comparing against None in Python does scary things
         if (targetRoom == None):
             print("Can't go there, kiddo")
         else:
@@ -112,6 +124,7 @@ class Player(Container):
             
     def take_item(self, item):
         currentItem = self.currentRoom.find_elem(item)
+        #use currentItem is not None due to scariness
         if(not(currentItem == None)):
             if (currentItem.is_mutable()):
                 self.add_elem(currentItem)
@@ -127,6 +140,7 @@ class Player(Container):
     
     def set_item(self, item, location):
         currentItem = self.find_elem(item)
+        # is not None
         if (not(currentItem == None)):
             if (isinstance(location, Container)):
                 self.delete_elem(currentItem)
