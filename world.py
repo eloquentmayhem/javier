@@ -3,6 +3,7 @@ import descriptions
 import item
 import room
 import npc
+import objects.piano
 
 #The environment
 class World(object):
@@ -59,8 +60,7 @@ class World(object):
         cfa = room.Room("College of Fine Arts", descriptions.cfa)
         ########piano room Start#######
         practice = room.Room("Practice Room", descriptions.practice)
-        practice.add_elem(item.Item("Piano", descriptions.piano, False,
-                                    descriptions.pianoTake))
+        practice.add_elem(objects.piano.piano)
         practice.add_elem(item.Item("Music Stand", descriptions.stand,
                                     False, descriptions.standTake))
         practice.add_elem(npc.Npc("Lewd soloist", descriptions.soloist, False,
@@ -118,7 +118,7 @@ class World(object):
             curLoc.delete_elem(item.name)
         else:
             print("Initializing Error: item" + item + "is not found")
-    
+
     #Print description of item specified
     def print_info(self, item):
         #Print info about room

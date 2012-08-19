@@ -7,7 +7,7 @@ class Item(object):
         #true if you can take obj at the moment, else false
         self.takeable = takeable
         #description if you try to take an obj that can't be
-        #take at the moment
+        #taken at the moment
         self.nTakeDesc = nTakeDesc
         
     #True if item can be moved, False otherwise

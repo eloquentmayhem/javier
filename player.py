@@ -1,4 +1,5 @@
 import container
+import usable_item
 import world
 
 #The player, or YOU!
@@ -36,7 +37,25 @@ class Player(container.Container):
     #Drop the item from inventory in the current room
     def drop_item(self, item):
         self.set_item(item, world.world.currentRoom)
-    
+
+    #Use an object either in the inventory or world
+    def use_item(self, item_name):
+        room = world.world.currentRoom
+        if self.have_elem(item_name):
+            location, item = self, self.find_elem(item_name)
+        elif room.have_elem(item_name):
+            location, item = room, room.find_elem(item_name)
+        else:
+            print("I don't know what that is.")
+            return
+        
+        if not isinstance(item, usable_item.UsableItem):
+            print("Can't use dat.")
+            return
+        
+        item.use_from(location)
+
+
     #Give/place an item from inventory to/in specified location
     def set_item(self, item, location):
         currentItem = self.find_elem(item)

@@ -34,6 +34,7 @@ commands = [
             # Object manipulation
             ("take $", player.player.take_item, []),
             ("drop $", player.player.drop_item, []),
+            ("use $", player.player.use_item, []),
 
             # Information-viewing commands
             ("info $", world.world.print_info, []),
