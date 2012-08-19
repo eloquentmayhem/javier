@@ -6,7 +6,6 @@ Things Done (August 18, 2012 --> Luna):
 Things to Do (Add to/delete as fit):
 	~Edit descriptions.py to make better descriptions for objects
 	~Write better introductions
-	~Implement Quest system
 	~Write questline
 	~Implement talking to NPCs
 	~Improve npc class

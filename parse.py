@@ -4,6 +4,7 @@ to keep it simple. Look at "commands" below for the syntax to add a new command
 """
 
 import player
+import quest
 import world
 
 """ Each command is a format string, followed by a function to call, followed by
@@ -34,16 +35,16 @@ commands = [
             ("take $", player.player.take_item, []),
             ("drop $", player.player.drop_item, []),
 
-            # Aliases for the "info" command
+            # Information-viewing commands
             ("info $", world.world.print_info, []),
             ("info", world.world.print_info, [None]),
             ("examine $", world.world.print_info, []),
             ("examine", world.world.print_info, [None]),
             ("look $", world.world.print_info, []),
             ("look", world.world.print_info, [None]),
-
             ("inventory", player.player.print_inventory, []),
             ("i", player.player.print_inventory, []),
+            ("quests", quest.print_quests, []),
             ("quit", exit, [])]
 
 # Given a line of input, look for and execute a matching command. If you can't,

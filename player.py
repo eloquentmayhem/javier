@@ -21,7 +21,7 @@ class Player(container.Container):
     def take_item(self, item):
         currentItem = world.world.currentRoom.find_elem(item)
         if(currentItem is not None):
-            if (currentItem.is_mutable()):
+            if (currentItem.is_takeable()):
                 self.add_elem(currentItem)
                 world.world.currentRoom.delete_elem(currentItem)
                 print("You take the "+item+".")
@@ -52,7 +52,7 @@ class Player(container.Container):
         else:
             print("You don't have this item!")
             return
-    
+
     #prints what you are holding
     def print_inventory(self):
         print("You are holding:"),
