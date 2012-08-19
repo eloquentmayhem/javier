@@ -28,7 +28,7 @@ class Container(object):
     def find_elem(self, item):
         for i in range(len(self.items)):
             currentItem = self.items[i]
-            if (currentItem.name == item):
+            if (currentItem.name.lower() == str(item).lower()):
                 return currentItem
         return None
         
