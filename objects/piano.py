@@ -9,6 +9,7 @@ def on_use():
           "a favor. Can you go over to Tazza and show their stupid hipster a lesson for me? If " +
           "you do I can help you with with your quest for revenge")
     quest.quest_piano.complete_stage(quest.piano_start)
+    return True
 
 piano = usable_item.UsableItem("Piano", descriptions.piano, False, descriptions.pianoTake,
                                on_use, usable_item.USABLE)

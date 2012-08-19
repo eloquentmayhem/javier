@@ -103,6 +103,10 @@ soloist = ("A filthy, moderately overweight man holding an electric guitar. " +
 soloistTake = ("Two problems, here: The soloist is much too heavy to lift, and you really " +
         "couldn't bring yourself to touch him anyway.")
 
+amp = ("A guitar amplifier. You see a guage for the gain, which is turned up to '11' and cannot"+
+       " be moved.")
+ampTake =("You can't take the amp")
+
 ###############################################
 ###############################################
 #####################GATES#####################
@@ -116,3 +120,7 @@ tazza = ("A coffee joint. Sounds like a good idea until you remember it's campus
 
 hipster = "He played text adventures before they were cool."
 hipsterTake = "Taking is sooooo mainstream. The hipster can't let you do that."
+
+hipsterAshes = ("The charred black remains of a hipster. His only regret was that dying is too " +
+                 "mainstream.")
+hipsterAshesTake = "You can't take the hipster ashes"

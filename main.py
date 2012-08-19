@@ -17,8 +17,9 @@ def continue_intro(name):
     
 def main():
     name = run_intro()
-    description = continue_intro(name)
-    player.player = player.Player(name, description)
+    player.player.name = name
+    player.player.description = continue_intro(name)
+
     world.world.currentRoom.print(True)
     while (True):
         parse.do_command(input())

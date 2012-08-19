@@ -4,6 +4,7 @@ import item
 import room
 import npc
 import objects.piano
+import objects.popculture
 
 #The environment
 class World(object):
@@ -25,10 +26,8 @@ class World(object):
                                 False, descriptions.sheetMusTake))
         dorm.add_elem(item.Item("Computer", descriptions.computer, False,
                                 descriptions.computerTake))
-        dorm.add_elem(item.Item("Amp", descriptions.amp, False,
-                                descriptions.ampTake))
-        dorm.add_elem(item.Item("Pop Culture", descriptions.popCulture, True,
-                                descriptions.popCultureTake))
+        dorm.add_elem(objects.popculture.popculture)
+        
         #######Dorm End################
         #######Bathroom Start##########
         bathroom = room.Room("Javier's Bathroom", descriptions.bathroom)
@@ -102,6 +101,19 @@ class World(object):
                        "Practice Room":practice,
                        "Gates":gates,
                        "Tazza D'oro":tazza}
+
+        #Make rooms visible as members
+        self.dorm = dorm
+        self.bathroom = bathroom
+        self.outside = outside
+        self.wean = wean
+        self.classroom = classroom
+        self.office = office
+        self.cfa = cfa
+        self.practice = practice
+        self.gates = gates
+        self.tazza = tazza
+
         self.currentRoom = dorm
     
     def find_room(self, item):

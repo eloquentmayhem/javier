@@ -9,6 +9,8 @@ USABLE = 2
 REUSABLE = 3
 
 class UsableItem(item.Item):
+    # on_use is called when trying to use the item, and returns a bool saying whether
+    # the usage succeeded.
     def __init__(self, name, description, takeable, nTakeDesc, on_use, reusability):
         super(UsableItem, self).__init__(name, description, takeable, nTakeDesc)
         self.on_use = on_use
@@ -17,13 +19,12 @@ class UsableItem(item.Item):
 
     def use_from(self, location):
         if self.reusability == CONSUMABLE:
-            self.on_use()
-            location.delete_elem(self.name)
+            if self.on_use():
+                location.delete_elem(self.name)
         elif self.reusability == USABLE:
             if self.used:
                 print("You use it again. Nothing interesting happens.")
             else:
-                self.used = True
-                self.on_use()
+                self.used = self.on_use()
         elif self.reusability == REUSABLE:
             self.on_use()

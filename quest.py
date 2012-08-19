@@ -24,7 +24,9 @@ class Quest:
 
         if stage.on_complete is not None:
             stage.on_complete()
-        
+    
+    def stage_active(self, stage):
+        return stage in self.active_stages
 
 class Stage:
     # Args: desc: Brief description of this stage
