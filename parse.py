@@ -18,7 +18,9 @@ argument for each wildcard. These arguments all go after the ones specified in t
 Do not put two wildcards right next to each other, though separating them by a space is ok.
 """
 
-commands = [("n", player.player.go_direction, ["north"]),
+commands = [
+            # Navigation commands
+            ("n", player.player.go_direction, ["north"]),
             ("e", player.player.go_direction, ["east"]),
             ("w", player.player.go_direction, ["west"]),
             ("s", player.player.go_direction, ["south"]),
@@ -27,9 +29,21 @@ commands = [("n", player.player.go_direction, ["north"]),
             ("west", player.player.go_direction, ["west"]),
             ("south", player.player.go_direction, ["south"]),
             ("go $", player.player.go_direction, []),
+            
+            # Object manipulation
             ("take $", player.player.take_item, []),
             ("drop $", player.player.drop_item, []),
+
+            # Aliases for the "info" command
             ("info $", world.world.print_info, []),
+            ("info", world.world.print_info, [None]),
+            ("examine $", world.world.print_info, []),
+            ("examine", world.world.print_info, [None]),
+            ("look $", world.world.print_info, []),
+            ("look", world.world.print_info, [None]),
+
+            ("inventory", player.player.print_inventory, []),
+            ("i", player.player.print_inventory, []),
             ("quit", exit, [])]
 
 # Given a line of input, look for and execute a matching command. If you can't,
