@@ -26,6 +26,8 @@ class World(object):
                                 descriptions.computerTake))
         dorm.add_elem(item.Item("Amp", descriptions.amp, False,
                                 descriptions.ampTake))
+        dorm.add_elem(item.Item("Pop Culture", descriptions.popCulture, True,
+                                descriptions.popCultureTake))
         #######Dorm End################
         #######Bathroom Start##########
         bathroom = room.Room("Javier's Bathroom", descriptions.bathroom)
@@ -61,7 +63,16 @@ class World(object):
                                     descriptions.pianoTake))
         practice.add_elem(item.Item("Music Stand", descriptions.stand,
                                     False, descriptions.standTake))
+        practice.add_elem(npc.Npc("Lewd soloist", descriptions.soloist, False,
+                                  descriptions.soloistTake))
         
+        #############GATES#############
+        gates = room.Room("Gates", descriptions.gates)
+        ########Tazza D'oro start######
+        tazza = room.Room("Tazza D'oro", descriptions.tazza)
+        tazza.add_elem(npc.Npc("Hipster", descriptions.hipster, False,
+                               descriptions.hipsterTake))
+
         #######Add doors###############
         dorm.add_door(bathroom, "west")
         bathroom.add_door(dorm, "east")
@@ -77,6 +88,10 @@ class World(object):
         cfa.add_door(outside, "east")
         cfa.add_door(practice, "north")
         practice.add_door(cfa, "south")
+        outside.add_door(gates, "east")
+        gates.add_door(outside, "west")
+        gates.add_door(tazza, "east")
+        tazza.add_door(gates, "west")
         self.rooms = { "Javier's Dorm":dorm, 
                        "Javier's Bathroom":bathroom,
                        "The Outside":outside,
@@ -84,7 +99,9 @@ class World(object):
                        "Javier's Classroom":classroom,
                        "Jacob's Office":office,
                        "The College of Fine Arts":cfa,
-                       "Practice Room":practice}
+                       "Practice Room":practice,
+                       "Gates":gates,
+                       "Tazza D'oro":tazza}
         self.currentRoom = dorm
     
     def find_room(self, item):
@@ -96,16 +113,19 @@ class World(object):
     
     def move_object_to(self, item, destLoc):
         curLoc = find_room(item)
-        if (room is not None):
+        if (curLoc is not None):
             destLoc.add_elem(item)
-            curLoc.delete_elem(item)
+            curLoc.delete_elem(item.name)
         else:
-            print("Initalizing Error: item" + item + "is not found")
+            print("Initializing Error: item" + item + "is not found")
     
     #Print description of item specified
     def print_info(self, item):
+        #Print info about room
+        if ((item is None) or (item == self.currentRoom.name) or (item == "room")):
+            self.currentRoom.print(True)
         #Print info about item in player's inventory 
-        if (player.player.have_elem(item)):
+        elif (player.player.have_elem(item)):
             currentItem = player.player.find_elem(item)
             currentItem.print_description()
             return
@@ -114,9 +134,6 @@ class World(object):
             currentRoom = self.currentRoom.find_elem(item)
             currentRoom.print_description()
             return
-        #Print info about room
-        elif ((item is None) or (item == self.currentRoom.name) or (item == "room")):
-            self.currentRoom.print(True)
         #Print info about player
         elif (item.lower() == player.player.name.lower()):
             player.player.print_description()

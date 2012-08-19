@@ -23,11 +23,11 @@ class Player(container.Container):
         if(currentItem is not None):
             if (currentItem.is_takeable()):
                 self.add_elem(currentItem)
-                world.world.currentRoom.delete_elem(currentItem)
+                world.world.currentRoom.delete_elem(item)
                 print("You take the "+item+".")
                 return
             else:
-                print("You can't take the "+item+"!")
+                currentItem.print_nTakeDesc()
                 return
         else:
             print("The "+item+" does not exist!")
@@ -42,7 +42,7 @@ class Player(container.Container):
         currentItem = self.find_elem(item)
         if (currentItem is not None):
             if (isinstance(location, container.Container)):
-                self.delete_elem(currentItem)
+                self.delete_elem(item)
                 location.add_elem(currentItem)
                 print ("You drop the "+item+".")
                 return

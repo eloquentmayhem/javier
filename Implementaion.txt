@@ -4,7 +4,7 @@ Things Done (August 18, 2012 --> Luna):
 	~Added ability in World class to move an object from one room to another (for quest purposes)
 
 Things to Do (Add to/delete as fit):
-	~Edit descriptions.py to make better descriptions for objects
+	~Edit descriptions.py to make better descriptions for objects (started)
 	~Write better introductions
 	~Write questline
 	~Implement talking to NPCs

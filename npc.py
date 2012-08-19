@@ -20,7 +20,7 @@ class Npc(container.Container):
         
     def give_item(self, item):
         player.player.add_elem(item)
-        self.delete_elem(item)
+        self.delete_elem(item.name)
         
     def use_item(self, item):
-        self.delete_item(item)
+        self.delete_elem(item)
