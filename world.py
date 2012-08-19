@@ -115,7 +115,7 @@ class World(object):
             currentRoom.print_description()
             return
         #Print info about room
-        elif ((item == self.currentRoom.name) or (item == "room")):
+        elif ((item is None) or (item == self.currentRoom.name) or (item == "room")):
             self.currentRoom.print_description()
         #Print info about player
         elif (item == player.player.name):

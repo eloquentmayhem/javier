@@ -18,8 +18,6 @@ argument for each wildcard. These arguments all go after the ones specified in t
 Do not put two wildcards right next to each other, though separating them by a space is ok.
 """
 
-#bug in parser -> When you type nooo (or anything starting with a n, actually)
-#it assumes it's a direction?
 commands = [("n", player.player.go_direction, ["north"]),
             ("e", player.player.go_direction, ["east"]),
             ("w", player.player.go_direction, ["west"]),

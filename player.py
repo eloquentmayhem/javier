@@ -14,9 +14,9 @@ class Player(container.Container):
             print("Can't go there, kiddo")
         else:
             world.world.currentRoom = targetRoom
-            print("You go into " + world.world.currentRoom.name + ".")
-            world.world.currentRoom.print_doors()
-            
+            targetRoom.print(not targetRoom.visited)
+            targetRoom.visited = True
+        
     #take item from the current room
     def take_item(self, item):
         currentItem = world.world.currentRoom.find_elem(item)

@@ -1,6 +1,6 @@
 import parse
 import player
-#import world
+import world
 
 #Introduces the game and gets name of player to mercilessly mock later
 def run_intro():
@@ -19,7 +19,7 @@ def main():
     name = run_intro()
     description = continue_intro(name)
     player.player = player.Player(name, description)
- #   world.world = world.World()
+    world.world.currentRoom.print(True)
     while (True):
         parse.do_command(input())
     return
