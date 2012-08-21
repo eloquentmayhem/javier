@@ -5,25 +5,23 @@
 ###############################################
 
 ##################BEDROOM START#################
-dorm = "hi"
+dorm = ("The pile of filth Javier calls home. The stenches of alcohol, musty books and unwashed clothes fill " +
+        "the air as you wonder how he could live here, or for that manner, how you could manage to sleep here.")
 
-wine = "Snarky comments about Javier"
+wine = ("The bottle: Javier's first and truest love. You're just surprised it's not empty yet.")
 wineTake = "You can't take the wine"
 
-bed = "Where Javier (and apparently you) sleeps"
+bed = "Where Javier (and apparently you) sleeps. It looks pretty disheveled. My god, what did you do last night?"
 bedTake = "You can't take the bed"
 
 settlers = "The Settlers of Catan set that Javier borrowed from Luna and never returned. Stupid Javier."
 settlersTake = "You can't take the Settlers of Catan Set"
 
-sheetMus = "Blahblah\n"
+sheetMus = "The sheet music for some song by Zoey Deschanel. You see the pages are worn from extensive use."
 sheetMusTake = "You can't take the sheet music"
 
 computer = "Where Javier listens to his Zoey Deschanel and watches his zombie TV show, the one that you never could understand."
 computerTake = "You can't take the computer"
-
-amp = "Amp"
-ampTake = "You can't take the amp"
 
 popCulture = "An artifact of the popular culture. Probably involving Zoey."
 popCultureTake = "You can't take the pop culture. Or should I say, CAN'T TOUCH THIS."
@@ -35,7 +33,7 @@ bathroom = "Javier's bathroom is filthy."
 toliet = "The toliet is covered with yellow stains. Gross! But hey, you gotta go when you've gotta go."
 tolietTake = "You can't take the toliet"
 
-sink = "Does Javier ever use the sink? "
+sink = "Does Javier ever use the sink?"
 sinkTake = "You try to take the sink, but it is too heavy and you soon give up"
 
 ###############################################
@@ -49,7 +47,7 @@ sinkTake = "You try to take the sink, but it is too heavy and you soon give up"
 outside = "You are outside. The sun feels strangely warm against your pale, pale skin."
 
 Zoey = "The woman of Javier's dreams"
-ZoeyTake = "You cant take the Zoey!"
+ZoeyTake = "You can't take the Zoey!"
 
 ###############################################
 ###############################################
@@ -60,16 +58,17 @@ ZoeyTake = "You cant take the Zoey!"
 wean = "The ugliest building on campus... so of course it is frequented by Javier."
 
 ################CLASSROOM START##################
-classroom = "Where Javier teaches classes."
+classroom = "Where Javier teaches classes. For loose definitions of 'teach'."
 
-chalkboard = "the chalkboard"
+chalkboard = "The chalkboard is covered with many LIES that Javier has written and then erased."
 chalkboardTake = "No, that is firmly affixed to the wall. Definitely not moving."
 
-chalk = "chalk"
+chalk = ("The boy sure is hard on his chalk. You see dozens of broken pieces of chalk. Since he goes through it so " +
+         "quickly, he has multiple packs lying around.")
 chalkTake = "The chalk? You want the chalk? Well YOU CAN'T HANDLE THE CHALK!"
 
 #############JACOB'S OFFICE START#################
-office = "Where Javier's friend Jacob works"
+office = "Where Javier's friend Jacob works. Much cleaner than anywhere inhabited by Javier."
 
 
 jacob = "Javier's British friend"
@@ -81,17 +80,18 @@ jacobTake = "Sorry honey, Jacob's already taken ;)"
 ###############################################
 ###############################################
 
-cfa = "The college of fine arts building"
+cfa = ("College of Fine Arts: A grand stone hall of learning. And pretending you're better " +
+       "than people who listen to contemporary music.")
 
 #################PRACTICE ROOM START#############
 
-practice = "The practice room"
+practice = "They say practice makes perfect, but Javier makes you doubt this age-old wisdom."
 
 piano = ("This piano is pretty big. You wonder if it's compensating for something. " +
          "However, a piano is a piano, and you're very tempted to rawk out.")
 pianoTake = ("You struggle to lift the piano, and then remember you're a puny little " +
              "CMU student, not He-Man. Your efforts were in vain.")
-stand = "The music stand"
+stand = "A music stand. There's no music on it."
 standTake = "You can't take the music stand"
 
 soloist = ("A filthy, moderately overweight man holding an electric guitar. " +
