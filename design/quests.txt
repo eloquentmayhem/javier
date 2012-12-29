@@ -1,6 +1,7 @@
 Quest outlines:
 
-Piano quest:
+PIANO QUEST:
+Walkthrough
 1) Go to piano room
 2) Talk to lewd soloist
 3) Go to dorm room
@@ -26,3 +27,107 @@ Talk to soloist
 Use pop culture on hipster
 Give ashes to soloist
 Install amp
+
+
+ZOEY QUEST:
+Walkthrough
+1) Go to wherever Zoey is (Maximum Flavor? Why not?)
+2) Talk to Zoey about Love (discover she's in love with Jerkface)
+3) Go to Jerkface's office
+4) Take Lecture Notes (incriminating Jerkface in his love affair)
+5) Return to Maximum Flavor
+6) Give notes to Zoey (she starts crying uncontrollably)
+7) Go to Javier's Dorm
+8) Take copious amounts of alcohol
+9) Return to Zoey
+10) Give copious amounts of alcohol to Zoey.
+11) Get kicked out of Maximum Flavor for public drunkenness.
+12) Talk Zoey into dating Javier
+
+Stages:
+1) Discovered Jerkface-Zoey relationship
+2) Fetched Lecture Notes
+3) Made Zoey cry
+4) Obtained booze
+5) Made Zoey drunk
+6) Complete
+
+Things that trigger unlocks:
+
+Talk to Zoey
+Take lecture notes
+Use lecture notes on Zoey
+Take booze
+Use booze on Zoey
+Talk to Zoey
+
+SI SENOR QUEST:
+Walkthrough
+1) Go to Si Senor
+2) Try to order food (can't: out of dinex)
+3) Go to CFA lawn
+4) Talk to Womanizing Moose (offers money for Settlers set)
+5) Go to Javier's dorm
+6) Take Settlers set
+7) Return to CFA lawn
+8) Sell set to womanizing moose (get $20)
+9) Go to Si Senor again
+10) Buy Food
+11) Go to (Chipotle? Wean? I dunno) (home of the Javier)
+12) Try (fail) to give him food
+13) Go to Max Flavor
+14) Buy Womanizing Calzone
+15) Eat Womanizing Calzone
+16) Put Si Senor in Womanizing Box
+17) Return to ???
+18) Give Womanizing Belgian Waffle to Javier
+
+Stages:
+1) Failed Order
+2) Found Moose
+3) Found Settlers
+4) Got $$$
+5) Got "Food"
+6) Failed food-give
+7) Got Calzone
+8) Got Box
+9) Disguised "Food"
+10) Complete
+
+Actions:
+1) Try to order
+2) Talk to moose
+3) Take settlers
+4) Talk to moose
+5) Talk to cashier
+6) Talk to Javier
+7) Talk to Max Flavor cashier
+8) Eat calzone
+9) Use box on "Food"
+10) Talk to Javier
+
+TA QUEST
+Walkthrough:
+1) Go to Wean Study Room
+2) Talk to Javier about being a bad TA
+3) Go to <somewhere> (La Prima? Why Not?)
+4) Talk to Marla (or whatever her name is)
+5) Go to Si Senor
+6) Take donuts
+7) Go to <somewhere>
+8) Give donuts to Marla
+9) Go to Javier's Dorm
+10) Take clothes
+11) Go to <somewhere>
+12) Give clothes to Marla
+13) Go to classroom
+14) Laugh
+
+Stages:
+1) "Need a prank" (talked to Javier)
+2) "Found Chubby" (talked to chubby)
+3) "Got Donuts" (took donuts)
+4) "Won Chubby's Allegiance" (gave donuts)
+5) "The Emperor's New Clothes" (found clothes)
+6) "Dressed to Kill" (gave clothes)
+7) Done! (watched class)
