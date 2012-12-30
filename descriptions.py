@@ -74,6 +74,10 @@ office = "Where Javier's friend Jacob works. Much cleaner than anywhere inhabite
 jacob = "Javier's British friend"
 jacobTake = "Sorry honey, Jacob's already taken ;)"
 
+lectureNotes = ("The notes for a 212 lecture, which happen to betray Jerkface Sr.'s undying love for " +
+                "Carly Rae Jepsen!")
+lectureNotesTake = "You can't take the lecture notes. Nobody reads those."
+
 ###############################################
 ###############################################
 #####################CFA#######################

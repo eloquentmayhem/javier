@@ -55,6 +55,8 @@ class World(object):
         office = room.Room("Jacob's Office", descriptions.office)
         office.add_elem(npc.Npc("Jacob Davis", descriptions.jacob, False,
                                    descriptions.jacobTake))
+        office.add_elem(item.Item("Lecture Notes", descriptions.lectureNotes, True,
+                                  descriptions.lectureNotesTake))
         #############CFA###############
         cfa = room.Room("College of Fine Arts", descriptions.cfa)
         ########piano room Start#######
