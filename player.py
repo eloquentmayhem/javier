@@ -1,6 +1,7 @@
 import container
 import usable_item
 import world
+import npc
 
 #The player, or YOU!
 class Player(container.Container):
@@ -36,7 +37,18 @@ class Player(container.Container):
     
     #Drop the item from inventory in the current room
     def drop_item(self, item):
-        self.set_item(item, world.world.currentRoom)
+        self.set_item(item, world.world.currentRoom,
+                      "You drop the "+item+".")
+
+    #Give a thing to a person
+    def give_to(self, item, target_name):
+        room = world.world.currentRoom
+        if room.have_elem(target_name):
+            target = self.find_elem(item_name)
+            self.set_item(item, target_name, "You give the "
+                          +item+ " to " + target_name +".")
+        else:
+            print("You're giving the what to the who now?")
 
     #Use an object either in the inventory or world
     def use_item(self, item_name):
@@ -55,19 +67,27 @@ class Player(container.Container):
         
         item.use_from(location)
 
+    #Talk to an actor in the world
+    def talk_to(self, actor_name):
+        room = world.world.currentRoom
+        if not room.have_elem(actor_name):
+            print("Who's that?")
+            return
+        target = room.find_elem(actor_name)
+        if not isinstance(target, npc.Npc):
+            print("That's going to look awfully silly, now isn't it?")
+            return
+        target.on_talk()
 
     #Give/place an item from inventory to/in specified location
-    def set_item(self, item, location):
+    def set_item(self, item, location, display_text):
         currentItem = self.find_elem(item)
         if (currentItem is not None):
-            if (isinstance(location, container.Container)):
-                self.delete_elem(item)
-                location.add_elem(currentItem)
-                print ("You drop the "+item+".")
-                return
-            else: 
-                print("yup, haven't implemented giving to people yet")
-                return
+            assert (isinstance(location, container.Container))
+            self.delete_elem(item)
+            location.add_elem(currentItem)
+            print(display_text)
+            return
         else:
             print("You don't have this item!")
             return

@@ -1,0 +1,7 @@
+import npc
+import quest
+import world
+
+class Zoey(npc.Npc):
+    def on_talk(self):
+        print("Hi")

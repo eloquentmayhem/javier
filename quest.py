@@ -28,6 +28,9 @@ class Quest:
     def stage_active(self, stage):
         return stage in self.active_stages
 
+    def stage_completed(self, stage):
+        return stage in self.completed_stages
+
 class Stage:
     # Args: desc: Brief description of this stage
     #  on_complete: function to call when it's completed
@@ -52,7 +55,21 @@ quest_piano = Quest("Piano Sabotage",
                  piano_give_ashes,
                  piano_install_amp])
 
-quests = [quest_piano]
+# The Zoey quest
+zoey_finish = Stage("Talk to Zoey again about Javier", [], True)
+zoey_drink = Stage("Get Zoey drunk", [zoey_finish])
+zoey_booze = Stage("Find some alcohol", [zoey_drink])
+zoey_give_evidence = Stage("Return the evidence to Zoey", [zoey_booze])
+zoey_evidence = Stage("Find the evidence of Jerkface's betrayal", [zoey_give_evidence])
+zoey_talk = Stage("Talk to Zoey about dating Javier", [zoey_evidence])
+quest_zoey = Quest("Zoey's Love", [zoey_talk, 
+                                   zoey_evidence, 
+                                   zoey_give_evidence, 
+                                   zoey_booze, 
+                                   zoey_drink, 
+                                   zoey_finish])
+
+quests = [quest_piano, quest_zoey]
 
 # The quests that have already been completed
 def complete_quests():

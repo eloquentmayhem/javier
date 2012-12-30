@@ -5,6 +5,7 @@ import room
 import npc
 import objects.piano
 import objects.popculture
+import peeps.zoey
 
 #The environment
 class World(object):
@@ -38,7 +39,7 @@ class World(object):
         #######Bathroom End############
         #######Outside Start###########
         outside = room.Room("The Outside", descriptions.outside)
-        outside.add_elem(npc.Npc("Zoey Deschanel", descriptions.Zoey,
+        outside.add_elem(peeps.zoey.Zoey("Zoey Deschanel", descriptions.Zoey,
                                     False, descriptions.ZoeyTake))
         #######Outside End#############
         

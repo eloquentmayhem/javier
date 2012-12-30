@@ -36,6 +36,10 @@ commands = [
             ("drop $", player.player.drop_item, []),
             ("use $", player.player.use_item, []),
 
+            # Other manipulation
+            ("talk to $", player.player.talk_to, []),
+            ("talk $", player.player.talk_to, []),
+
             # Information-viewing commands
             ("info $", world.world.print_info, []),
             ("info", world.world.print_info, [None]),
@@ -47,7 +51,10 @@ commands = [
             ("i", player.player.print_inventory, []),
             ("quests", quest.print_quests, []),
             ("quest", quest.print_quests, []),
-            ("quit", exit, [])]
+            ("quit", exit, []),
+            ("q", exit, []),
+            ("exit", exit, []),
+            ("exeunt", exit, [])]
 
 # Given a line of input, look for and execute a matching command. If you can't,
 # might as well make fun of the player.

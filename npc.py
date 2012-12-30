@@ -6,7 +6,7 @@ class Npc(container.Container):
         #true if you can take obj at the moment, else false
         self.takeable = takeable
         #description if you try to take an obj that can't be
-        #take at the moment
+        #taken at the moment
         self.nTakeDesc = nTakeDesc
 
     def is_takeable(self):
@@ -24,3 +24,6 @@ class Npc(container.Container):
         
     def use_item(self, item):
         self.delete_elem(item)
+        
+    def on_talk(self):
+        print("I don't wanna talk to you >:C")
