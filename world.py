@@ -5,6 +5,8 @@ import room
 import npc
 import objects.piano
 import objects.popculture
+import objects.lecture_notes
+import objects.wine
 import peeps.zoey
 
 #The environment
@@ -16,8 +18,7 @@ class World(object):
         ############DORM###############
         #######Bedroom Start###########
         dorm = room.Room("Javier's Dorm", descriptions.dorm)
-        dorm.add_elem(item.Item("Wine Bottle", descriptions.wine, True, 
-                                descriptions.wineTake))
+        dorm.add_elem(objects.wine.wine)
         dorm.add_elem(item.Item("Bed", descriptions.bed, False,
                                 descriptions.bedTake))
         dorm.add_elem(item.Item("Settlers of Catan set", 
@@ -56,8 +57,7 @@ class World(object):
         office = room.Room("Generic Office", descriptions.office)
         office.add_elem(npc.Npc("Jerkface Jr.", descriptions.jacob, False,
                                    descriptions.jacobTake))
-        office.add_elem(item.Item("Lecture Notes", descriptions.lectureNotes, True,
-                                  descriptions.lectureNotesTake))
+        office.add_elem(objects.lecture_notes.lecture_notes)
         office.add_elem(npc.Npc("Jerkface Sr.", descriptions.steve, False,
                                    descriptions.steveTake))
         office.add_elem(npc.Npc("Marla", descriptions.marla, False,

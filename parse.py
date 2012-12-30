@@ -39,6 +39,7 @@ commands = [
             # Other manipulation
             ("talk to $", player.player.talk_to, []),
             ("talk $", player.player.talk_to, []),
+            ("give $ to $", player.player.give_to, []),
 
             # Information-viewing commands
             ("info $", world.world.print_info, []),

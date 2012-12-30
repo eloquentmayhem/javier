@@ -24,9 +24,15 @@ class Player(container.Container):
         currentItem = world.world.currentRoom.find_elem(item)
         if(currentItem is not None):
             if (currentItem.is_takeable()):
+                if(currentItem.on_take is not None):
+                    if not (currentItem.on_take()):
+                        print("I don't see any use for that.")
+                        return
+                else:
+                    print("You take the "+item+".")               
+ 
                 self.add_elem(currentItem)
                 world.world.currentRoom.delete_elem(item)
-                print("You take the "+item+".")
                 return
             else:
                 currentItem.print_nTakeDesc()
@@ -41,12 +47,12 @@ class Player(container.Container):
                       "You drop the "+item+".")
 
     #Give a thing to a person
-    def give_to(self, item, target_name):
+    def give_to(self, item_name, target_name):
         room = world.world.currentRoom
         if room.have_elem(target_name):
-            target = self.find_elem(item_name)
-            self.set_item(item, target_name, "You give the "
-                          +item+ " to " + target_name +".")
+            target = room.find_elem(target_name)
+            self.set_item(item_name, target, "You give the "
+                          +item_name+ " to " + target_name +".")
         else:
             print("You're giving the what to the who now?")
 
@@ -86,7 +92,10 @@ class Player(container.Container):
             assert (isinstance(location, container.Container))
             self.delete_elem(item)
             location.add_elem(currentItem)
-            print(display_text)
+            if(currentItem.on_set is not None):
+                currentItem.on_set(location)
+            else:
+                print(display_text)
             return
         else:
             print("You don't have this item!")
