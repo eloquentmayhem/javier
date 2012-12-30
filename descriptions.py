@@ -175,4 +175,3 @@ glueTake = "God no! You'd never be able to afford that!"
 
 paint = ("A bottle of pink paint... so bright...")
 paintTake = "You reach for the paint, but it is too cheerful, and you cower in fear"
->>>>>>> 6f3e8c7617e99e438c07498a12d2bce4f60c1fc8
