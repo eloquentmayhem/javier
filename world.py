@@ -72,6 +72,14 @@ class World(object):
         tazza.add_elem(npc.Npc("Hipster", descriptions.hipster, False,
                                descriptions.hipsterTake))
 
+        #############CRAIG ST###########
+        craig = room.Room("Craig St.", descriptions.craig)
+        maxflav = room.Room("Maximum Flavor", descriptions.maxflav)
+
+        #############OAKLAND############
+        oakland = room.Room("Oakland", descriptions.oakland)
+        chipotle = room.Room("Chipotle", descriptions.chipotle)
+
         #######Add doors###############
         dorm.add_door(bathroom, "west")
         bathroom.add_door(dorm, "east")
@@ -91,6 +99,15 @@ class World(object):
         gates.add_door(outside, "west")
         gates.add_door(tazza, "east")
         tazza.add_door(gates, "west")
+        gates.add_door(craig, "north")
+        craig.add_door(gates, "south")
+        craig.add_door(oakland, "north")
+        craig.add_door(maxflav, "east")
+        maxflav.add_door(craig, "west")
+        oakland.add_door(craig, "south")
+        oakland.add_door(chipotle, "east")
+        chipotle.add_door(oakland, "west")
+
         self.rooms = { "Javier's Dorm":dorm, 
                        "Javier's Bathroom":bathroom,
                        "The Outside":outside,

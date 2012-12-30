@@ -124,3 +124,19 @@ hipsterTake = "Taking is sooooo mainstream. The hipster can't let you do that."
 hipsterAshes = ("The charred black remains of a hipster. His only regret was that dying is too " +
                  "mainstream.")
 hipsterAshesTake = "You can't take the hipster ashes"
+
+###############################################
+###############################################
+#####################NOMS######################
+###############################################
+###############################################
+
+craig = ("A street lined with restaurants that are mostly reasonably-priced and decent-tasting. " +
+         "At least they were the first hundred times you ate there.")
+maxflav = ("A small pizza and other grease shop. Their food is tasty but womanizing. Unlike the " +
+           "owners who seem super-friendly and upstanding.")
+
+oakland = ("Not THAT Oakland - you (probably) won't get shot here. But there are these funny-looking " +
+           "Pitt students and a bunch of restaurants that you've eaten at somewhat less than Craig St.")
+chipotle = ("You suspect the mexican food here isn't very authentic. BUT it's a million times better " +
+            "than Si Senor. Not that that's saying much.")
