@@ -68,11 +68,17 @@ chalk = ("The boy sure is hard on his chalk. You see dozens of broken pieces of 
 chalkTake = "The chalk? You want the chalk? Well YOU CAN'T HANDLE THE CHALK!"
 
 #############JACOB'S OFFICE START#################
-office = "Where Javier's friend Jacob works. Much cleaner than anywhere inhabited by Javier."
+office = "Where Jerkface Jr., Jerkface Sr., and Marla work. Much cleaner than anywhere inhabited by Javier."
 
 
-jacob = "Javier's British friend"
-jacobTake = "Sorry honey, Jacob's already taken ;)"
+jacob = "Javier's friend"
+jacobTake = "Jerkface Jr.'s heart belongs to someone else."
+
+steve = "A fat, ugly, British moron who makes terrible jokes"
+steveTake = "Why the h*** would you want to do that? Are you seriously that into spanish inquisition jokes?"
+
+marla = "She seems smart enough. And then you ask her about matricies..."
+marlaTake = "Sorry honey, she's taken!"
 
 ###############################################
 ###############################################
@@ -124,3 +130,30 @@ hipsterTake = "Taking is sooooo mainstream. The hipster can't let you do that."
 hipsterAshes = ("The charred black remains of a hipster. His only regret was that dying is too " +
                  "mainstream.")
 hipsterAshesTake = "You can't take the hipster ashes"
+
+###############################################
+###############################################
+########################UC#####################
+###############################################
+###############################################
+
+uc = ("The place where students study, quiet and sad and alone.  Sometimes " +
+"you think back to your freshman year, when you were forced to eat here.  What a terrible memory.")
+
+siSenor = ("When you walk in, a retched scent fills your nostrils. Suddenly, you hear a gagging " +
+"sound and someone in the food joint collapses, writhing, onto the floor.  The stupid freshmen will learn soon enough.")
+
+doughnut = (" The doughnut lies on the floor.  You see that a chunk is missing from it, and you spy patches of green mold growing." +
+"  A mouse pokes its head from behind the pink icing and, seeing you, scurries away.")
+doughnutTake = "Ew, why would you even touch that?"
+
+art = ("The art store is a strange and mysterious place. You're sure the " +
+"art majors know some dark magic.  How else can they know how to engage in social interaction? " +
+"The bright, cheerful room hurts your head, and you resolve to leave as soon as possible.")
+
+glue = ("'Super Magical Art Student Glue - $5,000', the tag on the bottle of " +
+"glue says")
+glueTake = "God no! You'd never be able to afford that!"
+
+paint = ("A bottle of pink paint... so bright...")
+paintTake = "You reach for the paint, but it is too cheerful, and you cower in fear"

@@ -52,9 +52,13 @@ class World(object):
         classroom.add_elem(item.Item("Chalk", descriptions.chalk, False,
                                      descriptions.chalkTake))
         ######Jacob's Office Start#####
-        office = room.Room("Jacob's Office", descriptions.office)
-        office.add_elem(npc.Npc("Jacob Davis", descriptions.jacob, False,
+        office = room.Room("Generic Office", descriptions.office)
+        office.add_elem(npc.Npc("Jerkface Jr.", descriptions.jacob, False,
                                    descriptions.jacobTake))
+        office.add_elem(npc.Npc("Jerkface Sr.", descriptions.steve, False,
+                                   descriptions.steveTake))
+        office.add_elem(npc.Npc("Marla", descriptions.marla, False,
+                                   descriptions.marlaTake))
         #############CFA###############
         cfa = room.Room("College of Fine Arts", descriptions.cfa)
         ########piano room Start#######
@@ -71,14 +75,27 @@ class World(object):
         tazza = room.Room("Tazza D'oro", descriptions.tazza)
         tazza.add_elem(npc.Npc("Hipster", descriptions.hipster, False,
                                descriptions.hipsterTake))
+                               
+        #############UC################
+        uc = room.Room("University Center", descriptions.uc)
+        ########Si Senior##############
+        siSenor = room.Room("Si Senor", descriptions.siSenor)
+        siSenor.add_elem(item.Item("Moldy Doughnut", descriptions.doughnut,
+                                   False, descriptions.doughnutTake))
+        ########Art Store##############
+        art = room.Room("Art Store", descriptions.art)
+        art.add_elem(item.Item("Glue", descriptions.glue, False,
+                                   descriptions.glueTake))
+        art.add_elem(item.Item("Neon Pink Paint", descriptions.paint, False,
+                                   descriptions.paintTake))
 
         #######Add doors###############
         dorm.add_door(bathroom, "west")
         bathroom.add_door(dorm, "east")
         dorm.add_door(outside, "north")
         outside.add_door(dorm, "south")
-        outside.add_door(wean, "north")
-        wean.add_door(outside, "south")
+        gates.add_door(wean, "south")
+        wean.add_door(gates, "north")
         wean.add_door(classroom, "east")
         classroom.add_door(wean, "west")
         wean.add_door(office, "west")
@@ -91,6 +108,12 @@ class World(object):
         gates.add_door(outside, "west")
         gates.add_door(tazza, "east")
         tazza.add_door(gates, "west")
+        outside.add_door(uc, "north")
+        uc.add_door(outside, "south")
+        uc.add_door(siSenor, "east")
+        siSenor.add_door(uc, "west")
+        uc.add_door(art, "west")
+        art.add_door(uc, "east")
         self.rooms = { "Javier's Dorm":dorm, 
                        "Javier's Bathroom":bathroom,
                        "The Outside":outside,
@@ -100,7 +123,10 @@ class World(object):
                        "The College of Fine Arts":cfa,
                        "Practice Room":practice,
                        "Gates":gates,
-                       "Tazza D'oro":tazza}
+                       "Tazza D'oro":tazza,
+                       "University Center":uc,
+                       "Si Senor":siSenor,
+                       "Art Store": art}
 
         #Make rooms visible as members
         self.dorm = dorm
@@ -113,7 +139,9 @@ class World(object):
         self.practice = practice
         self.gates = gates
         self.tazza = tazza
-
+        self.uc = uc
+        self.siSenor = siSenor
+        self.art = art
         self.currentRoom = dorm
     
     def find_room(self, item):

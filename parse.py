@@ -46,6 +46,7 @@ commands = [
             ("inventory", player.player.print_inventory, []),
             ("i", player.player.print_inventory, []),
             ("quests", quest.print_quests, []),
+            ("quest", quest.print_quests, []),
             ("quit", exit, [])]
 
 # Given a line of input, look for and execute a matching command. If you can't,
