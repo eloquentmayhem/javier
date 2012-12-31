@@ -22,4 +22,4 @@ def on_use():
     return True
 
 hipster_ashes = usable_item.UsableItem("Hipster Ashes", descriptions.hipsterAshes, True,
-                                    descriptions.hipsterAshesTake, on_use, usable_item.CONSUMABLE)
+                                    descriptions.hipsterAshesTake, on_use, usable_item.CONSUMABLE,[])

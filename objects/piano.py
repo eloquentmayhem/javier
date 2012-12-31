@@ -12,4 +12,4 @@ def on_use():
     return True
 
 piano = usable_item.UsableItem("Piano", descriptions.piano, False, descriptions.pianoTake,
-                               on_use, usable_item.USABLE)
+                               on_use, usable_item.USABLE, [])

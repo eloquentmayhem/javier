@@ -20,4 +20,4 @@ def on_take():
     print("You take the bottle, before the bottle takes you")
     return True
 
-wine = quest_item.QuestItem("Wine Bottle", descriptions.wine, on_set, on_take)
+wine = quest_item.QuestItem("Wine Bottle", descriptions.wine, on_set, on_take, [])

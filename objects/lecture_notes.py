@@ -1,8 +1,8 @@
 import quest_item
 import quest
 import world
-import peeps.zoey
 import descriptions
+import peeps.zoey
 
 def on_set(location):
     if isinstance(location, peeps.zoey.Zoey):
@@ -22,4 +22,4 @@ def on_take():
     print("You find Jerkface Sr.'s lecture notes - which betray his infidelity to Zoey!")
     return True
 
-lecture_notes = quest_item.QuestItem("Lecture Notes", descriptions.lectureNotes, on_set, on_take)
+lecture_notes = quest_item.QuestItem("Lecture Notes", descriptions.lectureNotes, on_set, on_take, [])

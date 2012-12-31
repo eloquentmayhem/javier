@@ -7,6 +7,8 @@ import objects.piano
 import objects.popculture
 import objects.lecture_notes
 import objects.wine
+import objects.neon_glue
+import objects.sticky_donut
 import peeps.zoey
 
 #The environment
@@ -20,23 +22,23 @@ class World(object):
         dorm = room.Room("Javier's Dorm", descriptions.dorm)
         dorm.add_elem(objects.wine.wine)
         dorm.add_elem(item.Item("Bed", descriptions.bed, False,
-                                descriptions.bedTake))
+                                descriptions.bedTake,[]))
         dorm.add_elem(item.Item("Settlers of Catan set", 
                                 descriptions.settlers, False,
-                                descriptions.settlersTake))
+                                descriptions.settlersTake,[]))
         dorm.add_elem(item.Item("Sheet Music", descriptions.sheetMus, 
-                                False, descriptions.sheetMusTake))
+                                False, descriptions.sheetMusTake,[]))
         dorm.add_elem(item.Item("Computer", descriptions.computer, False,
-                                descriptions.computerTake))
+                                descriptions.computerTake,[]))
         dorm.add_elem(objects.popculture.popculture)
         
         #######Dorm End################
         #######Bathroom Start##########
         bathroom = room.Room("Javier's Bathroom", descriptions.bathroom)
         bathroom.add_elem(item.Item("Toliet", descriptions.toliet, False,
-                                    descriptions.tolietTake))
+                                    descriptions.tolietTake,[]))
         bathroom.add_elem(item.Item("Sink", descriptions.sink, False,
-                                    descriptions.sinkTake))
+                                    descriptions.sinkTake,[]))
         #######Bathroom End############
         #######Outside Start###########
         outside = room.Room("The Outside", descriptions.outside)
@@ -50,9 +52,9 @@ class World(object):
         ########classroom Start########
         classroom = room.Room("Javier's Classroom", descriptions.classroom)
         classroom.add_elem(item.Item("Chalkboard", descriptions.chalkboard,
-                                     False, descriptions.chalkboardTake))
+                                     False, descriptions.chalkboardTake,[]))
         classroom.add_elem(item.Item("Chalk", descriptions.chalk, False,
-                                     descriptions.chalkTake))
+                                     descriptions.chalkTake,[]))
         ######Jacob's Office Start#####
         office = room.Room("Generic Office", descriptions.office)
         office.add_elem(npc.Npc("Jerkface Jr.", descriptions.jacob, False,
@@ -68,7 +70,7 @@ class World(object):
         practice = room.Room("Practice Room", descriptions.practice)
         practice.add_elem(objects.piano.piano)
         practice.add_elem(item.Item("Music Stand", descriptions.stand,
-                                    False, descriptions.standTake))
+                                    False, descriptions.standTake,[]))
         practice.add_elem(npc.Npc("Lewd soloist", descriptions.soloist, False,
                                   descriptions.soloistTake))
         
@@ -84,13 +86,13 @@ class World(object):
         ########Si Senior##############
         siSenor = room.Room("Si Senor", descriptions.siSenor)
         siSenor.add_elem(item.Item("Moldy Doughnut", descriptions.doughnut,
-                                   False, descriptions.doughnutTake))
+                                   False, descriptions.doughnutTake,["Neon Pink Glue"]))
         ########Art Store##############
         art = room.Room("Art Store", descriptions.art)
-        art.add_elem(item.Item("Glue", descriptions.glue, False,
-                                   descriptions.glueTake))
-        art.add_elem(item.Item("Neon Pink Paint", descriptions.paint, False,
-                                   descriptions.paintTake))
+        art.add_elem(item.Item("Glue", descriptions.glue, True,
+                                   descriptions.glueTake,["Neon Pink Paint"]))
+        art.add_elem(item.Item("Neon Pink Paint", descriptions.paint, True,
+                                   descriptions.paintTake,["Glue"]))
 
         #############CRAIG ST###########
         craig = room.Room("Craig St.", descriptions.craig)
@@ -162,6 +164,13 @@ class World(object):
         self.siSenor = siSenor
         self.art = art
         self.currentRoom = dorm
+    
+        combine_dict = {
+                        ("Glue","Neon Pink Paint") : objects.neon_glue.neon_glue,
+                        ("Neon Pink Paint","Glue") : objects.neon_glue.neon_glue,
+                        ("Neon Pink Doughnut","Neon Pink Glue") : objects.sticky_donut.sticky_donut,
+                        ("Neon Pink Glue","Neon Pink Doughnut") : objects.sticky_donut.sticky_donut
+                        }
     
     def find_room(self, item):
         for room in self.rooms:

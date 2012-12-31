@@ -16,4 +16,4 @@ def on_use():
     return True
 
 amp = usable_item.UsableItem("Amp", descriptions.amp, True,
-                                    descriptions.ampTake, on_use, usable_item.CONSUMABLE)
+                                    descriptions.ampTake, on_use, usable_item.CONSUMABLE,[])

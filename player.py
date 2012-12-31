@@ -101,6 +101,22 @@ class Player(container.Container):
             print("You don't have this item!")
             return
 
+    def combine_item(self, item1, item2):
+        currentItem1 = self.find_elem(item1)
+        currentItem2 = self.find_elem(item2)
+        if (currentItem1 is not None and currentItem2 is not None
+            and currentItem1.is_combinable(currentItem2)):
+            self.delete_elem(item1)
+            self.delete_elem(item2)
+            self.add_item(world.combine_dict[(item1,item2)])
+        elif (currentItem1 is None or currentItem2 is None):
+            print("You don't have the things you're trying to combine!")
+        else:
+            print("Fool! You can't combine those items!")
+            return
+            
+            
+            
     #prints what you are holding
     def print_inventory(self):
         print("You are holding:"),

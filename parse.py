@@ -35,6 +35,8 @@ commands = [
             ("take $", player.player.take_item, []),
             ("drop $", player.player.drop_item, []),
             ("use $", player.player.use_item, []),
+            ("combine $ $", player.player.combine_item, []),
+            ("mix $ $", player.player.combine_item, []),
 
             # Other manipulation
             ("talk to $", player.player.talk_to, []),

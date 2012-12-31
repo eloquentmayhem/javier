@@ -20,4 +20,4 @@ def on_use():
     return True
 
 popculture = usable_item.UsableItem("Pop Culture", descriptions.popCulture, True,
-                                    descriptions.popCultureTake, on_use, usable_item.CONSUMABLE)
+                                    descriptions.popCultureTake, on_use, usable_item.CONSUMABLE, [])

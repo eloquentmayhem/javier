@@ -11,8 +11,8 @@ REUSABLE = 3
 class UsableItem(item.Item):
     # on_use is called when trying to use the item, and returns a bool saying whether
     # the usage succeeded.
-    def __init__(self, name, description, takeable, nTakeDesc, on_use, reusability):
-        super(UsableItem, self).__init__(name, description, takeable, nTakeDesc)
+    def __init__(self, name, description, takeable, nTakeDesc, on_use, reusability, combine):
+        super(UsableItem, self).__init__(name, description, takeable, nTakeDesc, combine)
         self.on_use = on_use
         self.reusability = reusability
         self.used = False
