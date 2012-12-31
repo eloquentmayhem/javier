@@ -24,7 +24,7 @@ class Player(container.Container):
         currentItem = world.world.currentRoom.find_elem(item)
         if(currentItem is not None):
             if (currentItem.is_takeable()):
-                if(currentItem.on_take is not None):
+                if(hasattr(currentItem, "on_take")):
                     if not (currentItem.on_take()):
                         print("I don't see any use for that.")
                         return
