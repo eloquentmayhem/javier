@@ -105,10 +105,13 @@ class Player(container.Container):
         currentItem1 = self.find_elem(item1)
         currentItem2 = self.find_elem(item2)
         if (currentItem1 is not None and currentItem2 is not None
-            and currentItem1.is_combinable(currentItem2)):
+            and currentItem1.is_combinable(item2)):
             self.delete_elem(item1)
             self.delete_elem(item2)
-            self.add_item(world.combine_dict[(item1,item2)])
+            self.add_elem(world.world.combine_dict[(item1,item2)])
+            newItemName = world.world.combine_dict[(item1, item2)].name
+            print("You combine the " + item1 + " with the " +
+            item2 + " to get the " + newItemName)
         elif (currentItem1 is None or currentItem2 is None):
             print("You don't have the things you're trying to combine!")
         else:

@@ -165,7 +165,7 @@ class World(object):
         self.art = art
         self.currentRoom = dorm
     
-        combine_dict = {
+        self.combine_dict = {
                         ("Glue","Neon Pink Paint") : objects.neon_glue.neon_glue,
                         ("Neon Pink Paint","Glue") : objects.neon_glue.neon_glue,
                         ("Neon Pink Doughnut","Neon Pink Glue") : objects.sticky_donut.sticky_donut,

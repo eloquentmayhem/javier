@@ -21,10 +21,12 @@ class Item(object):
         self.takeable = takeable        
     
     def is_combinable(self, item2):
+        print(self.name)
+        print(item2)
         if (item2 in self.combine):
-            return true
+            return True
         else:
-            return false
+            return False
     
     def print_description(self):
         print(self.description)
