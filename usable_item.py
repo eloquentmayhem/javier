@@ -14,6 +14,8 @@ class UsableItem(item.Item):
     def __init__(self, name, description, takeable, nTakeDesc, on_use, reusability, combine):
         super(UsableItem, self).__init__(name, description, takeable, nTakeDesc, combine)
         self.on_use = on_use
+        if (isinstance(nTakeDesc, str) == False):
+            self.on_take = nTakeDesc
         self.reusability = reusability
         self.used = False
 

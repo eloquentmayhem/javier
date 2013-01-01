@@ -1,19 +1,13 @@
 import descriptions
+import player
 import quest
 import usable_item
 import world
 
 def on_use():
-    practice = world.world.practice
-    if (world.world.currentRoom != practice
-        or not quest.quest_piano.stage_active(quest.piano_install_amp)):
-        print ("There's nothing interesting to do with that here.")
-        return False
-
-    print("That'll show Javier! Next time he tries to use his beloved piano, all he'll get is a " +
-          "pile of distortion. Now on to your next mission!")
-    quest.quest_piano.complete_stage(quest.piano_install_amp)
-    return True
-
-neon_glue = usable_item.UsableItem("Amp", descriptions.amp, True,
-                                    descriptions.ampTake, on_use, usable_item.CONSUMABLE,[])
+    print ("The neon pink glue gets everywhere, in your hands,on your clothes, in your hairs... Brilliant idea, Sherlock.")
+    
+def on_take():
+    print ("You take the neon pink glue")
+    
+neon_glue = usable_item.UsableItem("Neon Pink Glue", descriptions.neon_glue, True, on_take, on_use, usable_item.CONSUMABLE, ["Moldy Doughnut"])

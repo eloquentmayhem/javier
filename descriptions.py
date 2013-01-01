@@ -26,6 +26,8 @@ computerTake = "You can't take the computer"
 popCulture = "An artifact of the popular culture. Probably involving Zoey."
 popCultureTake = "You can't take the pop culture. Or should I say, CAN'T TOUCH THIS."
 
+outfit = "Javier's clothing. It's strewn on the ground and stinks of whiskey. I mean, what else did you expect?"
+
 ####################BATHROOM START###############
 
 bathroom = "Javier's bathroom is filthy."
@@ -66,6 +68,9 @@ chalkboardTake = "No, that is firmly affixed to the wall. Definitely not moving.
 chalk = ("The boy sure is hard on his chalk. You see dozens of broken pieces of chalk. Since he goes through it so " +
          "quickly, he has multiple packs lying around.")
 chalkTake = "The chalk? You want the chalk? Well YOU CAN'T HANDLE THE CHALK!"
+
+Javier = ("The man himself.  You tear your eyes away in disgust.")
+JavierTake = ("You've been there, done that, and never again.")
 
 #############JACOB'S OFFICE START#################
 office = "Where Jerkface Jr., Jerkface Sr., and Marla work. Much cleaner than anywhere inhabited by Javier."
@@ -175,3 +180,7 @@ glueTake = "God no! You'd never be able to afford that!"
 
 paint = ("A bottle of pink paint... so bright...")
 paintTake = "You reach for the paint, but it is too cheerful, and you cower in fear"
+
+neon_glue =("Oh great, now you've make the neon pink paint extra hard to clean off...")
+
+sticky_donut = ("With all the growth covered, the doughnut almost looks edible!")

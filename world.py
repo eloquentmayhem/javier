@@ -9,7 +9,13 @@ import objects.lecture_notes
 import objects.wine
 import objects.neon_glue
 import objects.sticky_donut
+import objects.paint
+import objects.glue
+import objects.doughnut
+import objects.outfit
 import peeps.zoey
+import peeps.marla
+import peeps.javier
 
 #The environment
 class World(object):
@@ -21,6 +27,7 @@ class World(object):
         #######Bedroom Start###########
         dorm = room.Room("Javier's Dorm", descriptions.dorm)
         dorm.add_elem(objects.wine.wine)
+        dorm.add_elem(objects.outfit.outfit)
         dorm.add_elem(item.Item("Bed", descriptions.bed, False,
                                 descriptions.bedTake,[]))
         dorm.add_elem(item.Item("Settlers of Catan set", 
@@ -55,14 +62,17 @@ class World(object):
                                      False, descriptions.chalkboardTake,[]))
         classroom.add_elem(item.Item("Chalk", descriptions.chalk, False,
                                      descriptions.chalkTake,[]))
-        ######Jacob's Office Start#####
+        classroom.add_elem(peeps.javier.Javier("Javier Vazquez-Trejo", 
+                                    descriptions.Javier, False, 
+                                    descriptions.JavierTake))
+        ######Generic Office Start#####
         office = room.Room("Generic Office", descriptions.office)
         office.add_elem(npc.Npc("Jerkface Jr.", descriptions.jacob, False,
                                    descriptions.jacobTake))
         office.add_elem(objects.lecture_notes.lecture_notes)
         office.add_elem(npc.Npc("Jerkface Sr.", descriptions.steve, False,
                                    descriptions.steveTake))
-        office.add_elem(npc.Npc("Marla", descriptions.marla, False,
+        office.add_elem(peeps.marla.Marla("Marla", descriptions.marla, False,
                                    descriptions.marlaTake))
         #############CFA###############
         cfa = room.Room("College of Fine Arts", descriptions.cfa)
@@ -85,14 +95,11 @@ class World(object):
         uc = room.Room("University Center", descriptions.uc)
         ########Si Senior##############
         siSenor = room.Room("Si Senor", descriptions.siSenor)
-        siSenor.add_elem(item.Item("Moldy Doughnut", descriptions.doughnut,
-                                   False, descriptions.doughnutTake,["Neon Pink Glue"]))
+        siSenor.add_elem(objects.doughnut.doughnut)
         ########Art Store##############
         art = room.Room("Art Store", descriptions.art)
-        art.add_elem(item.Item("Glue", descriptions.glue, True,
-                                   descriptions.glueTake,["Neon Pink Paint"]))
-        art.add_elem(item.Item("Neon Pink Paint", descriptions.paint, True,
-                                   descriptions.paintTake,["Glue"]))
+        art.add_elem(objects.glue.glue)
+        art.add_elem(objects.paint.paint)
 
         #############CRAIG ST###########
         craig = room.Room("Craig St.", descriptions.craig)
@@ -168,8 +175,8 @@ class World(object):
         self.combine_dict = {
                         ("Glue","Neon Pink Paint") : objects.neon_glue.neon_glue,
                         ("Neon Pink Paint","Glue") : objects.neon_glue.neon_glue,
-                        ("Neon Pink Doughnut","Neon Pink Glue") : objects.sticky_donut.sticky_donut,
-                        ("Neon Pink Glue","Neon Pink Doughnut") : objects.sticky_donut.sticky_donut
+                        ("Moldy Doughnut","Neon Pink Glue") : objects.sticky_donut.sticky_donut,
+                        ("Neon Pink Glue","Moldy Doughnut") : objects.sticky_donut.sticky_donut
                         }
     
     def find_room(self, item):

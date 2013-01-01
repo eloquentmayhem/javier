@@ -15,8 +15,8 @@ class Quest:
         # active_stages == [] means the quest hasn't started.
         # if we're completing a non-active stage, it had better
         # be to start a quest
-        else:
-            assert self.active_stages == []
+   #     else:
+   #         assert self.active_stages == []
 
         self.is_complete = stage.completes_quest
         self.completed_stages += [stage]
@@ -69,7 +69,22 @@ quest_zoey = Quest("Zoey's Love", [zoey_talk,
                                    zoey_drink, 
                                    zoey_finish])
 
-quests = [quest_piano, quest_zoey]
+# The TA quest
+ta_finish = Stage("Watch and laugh at the recitation", [], True)
+ta_leave_marla = Stage("And off Marla Goes!", [ta_finish])
+ta_outfit = Stage("Dress Marla Up", [ta_leave_marla])
+ta_marla_again = Stage("Talk to Marla", [ta_outfit])
+ta_doughnut = Stage("Give Marla Food", [ta_marla_again])
+ta_marla = Stage("Who Will Help?", [ta_doughnut])
+ta_observe = Stage("Observe Javier's recitation", [ta_marla])
+quest_ta = Quest("TA Sabotage!", [ta_observe,
+                                  ta_marla,
+                                  ta_doughnut,
+                                  ta_outfit,
+                                  ta_leave_marla,
+                                  ta_finish])
+                                   
+quests = [quest_piano, quest_zoey, quest_ta]
 
 # The quests that have already been completed
 def complete_quests():
