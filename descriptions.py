@@ -51,6 +51,11 @@ outside = "You are outside. The sun feels strangely warm against your pale, pale
 Zoey = "The woman of Javier's dreams"
 ZoeyTake = "You can't take the Zoey!"
 
+Russell = "This moose has slept with more women than you could imagine."
+RussellTake = "Are you really sure you want him? What kind of girl/guy are you, anyway?"
+
+money = "It's a crime."
+
 ###############################################
 ###############################################
 ######################WEAN#####################
@@ -169,6 +174,11 @@ siSenor = ("When you walk in, a retched scent fills your nostrils. Suddenly, you
 doughnut = (" The doughnut lies on the floor.  You see that a chunk is missing from it, and you spy patches of green mold growing." +
 "  A mouse pokes its head from behind the pink icing and, seeing you, scurries away.")
 doughnutTake = "Ew, why would you even touch that?"
+
+burrito = "Rumor has it that this is a burrito. Personally, though, you're suspicious. All you know is it's a cold, cheap tortilla containing what appears to be ground mammal flesh. At least you HOPE it's mammal."
+
+peon = "Someone who couldn't get a better job than working at campus food. 'nuff said."
+peonTake = "His manager would be displeased with that."
 
 art = ("The art store is a strange and mysterious place. You're sure the " +
 "art majors know some dark magic.  How else can they know how to engage in social interaction? " +

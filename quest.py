@@ -83,8 +83,30 @@ quest_ta = Quest("TA Sabotage!", [ta_observe,
                                   ta_outfit,
                                   ta_leave_marla,
                                   ta_finish])
-                                   
-quests = [quest_piano, quest_zoey, quest_ta]
+
+# The Si Senor Quest
+sisenor_give = Stage ("Give Javier his noms", [], True)
+sisenor_sneaky = Stage ("Disguise the burrito", [sisenor_give])
+sisenor_box = Stage ("Make room for the burrito", [sisenor_sneaky])
+sisenor_calzone = Stage ("Buy something more appetizing", [sisenor_box])
+sisenor_try_give = Stage ("Give Javier the burrito", [sisenor_calzone])
+sisenor_order = Stage ("Get a burrito", [sisenor_try_give])
+sisenor_moneys = Stage ("Show me the money!", [sisenor_order])
+sisenor_catan = Stage ("Find Settlers of Catan", [sisenor_moneys])
+sisenor_moose = Stage ("Find someone who has money", [sisenor_catan])
+sisenor_try_order = Stage("Try to order a burrito", [sisenor_moose])
+quest_sisenor = Quest("Si Senor Adventure!", [sisenor_try_order,
+                                              sisenor_moose,
+                                              sisenor_catan,
+                                              sisenor_moneys,
+                                              sisenor_order,
+                                              sisenor_try_give,
+                                              sisenor_calzone,
+                                              sisenor_box,
+                                              sisenor_sneaky,
+                                              sisenor_give])
+               
+quests = [quest_piano, quest_zoey, quest_ta, quest_sisenor]
 
 # The quests that have already been completed
 def complete_quests():

@@ -13,9 +13,13 @@ import objects.paint
 import objects.glue
 import objects.doughnut
 import objects.outfit
+import objects.burrito
+import objects.settlers
 import peeps.zoey
 import peeps.marla
 import peeps.javier
+import peeps.russell
+import peeps.sisenor_peon
 
 #The environment
 class World(object):
@@ -30,9 +34,7 @@ class World(object):
         dorm.add_elem(objects.outfit.outfit)
         dorm.add_elem(item.Item("Bed", descriptions.bed, False,
                                 descriptions.bedTake,[]))
-        dorm.add_elem(item.Item("Settlers of Catan set", 
-                                descriptions.settlers, False,
-                                descriptions.settlersTake,[]))
+        dorm.add_elem(objects.settlers.settlers)
         dorm.add_elem(item.Item("Sheet Music", descriptions.sheetMus, 
                                 False, descriptions.sheetMusTake,[]))
         dorm.add_elem(item.Item("Computer", descriptions.computer, False,
@@ -51,6 +53,7 @@ class World(object):
         outside = room.Room("The Outside", descriptions.outside)
         outside.add_elem(peeps.zoey.Zoey("Zoey Deschanel", descriptions.Zoey,
                                     False, descriptions.ZoeyTake))
+        outside.add_elem(peeps.russell.Russell("Russell", descriptions.Russell, False, descriptions.RussellTake))
         #######Outside End#############
         
         
@@ -96,6 +99,7 @@ class World(object):
         ########Si Senior##############
         siSenor = room.Room("Si Senor", descriptions.siSenor)
         siSenor.add_elem(objects.doughnut.doughnut)
+        siSenor.add_elem(peeps.sisenor_peon.SisenorPeon("Peon", descriptions.peon, False, descriptions.peonTake))
         ########Art Store##############
         art = room.Room("Art Store", descriptions.art)
         art.add_elem(objects.glue.glue)

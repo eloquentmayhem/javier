@@ -65,21 +65,21 @@ SI SENOR QUEST:
 Walkthrough
 1) Go to Si Senor
 2) Try to order food (can't: out of dinex)
-3) Go to CFA lawn
+3) Go to the Outside
 4) Talk to Womanizing Moose (offers money for Settlers set)
 5) Go to Javier's dorm
 6) Take Settlers set
-7) Return to CFA lawn
+7) Return to the Outside
 8) Sell set to womanizing moose (get $20)
 9) Go to Si Senor again
 10) Buy Food
-11) Go to (Chipotle? Wean? I dunno) (home of the Javier)
+11) Go to Javier
 12) Try (fail) to give him food
 13) Go to Max Flavor
 14) Buy Womanizing Calzone
 15) Eat Womanizing Calzone
 16) Put Si Senor in Womanizing Box
-17) Return to ???
+17) Return to Javier
 18) Give Womanizing Belgian Waffle to Javier
 
 Stages:
