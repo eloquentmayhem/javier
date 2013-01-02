@@ -9,7 +9,7 @@ import descriptions
 def on_set(location):
     if isinstance(location, peeps.russell.Russell):
         # Give $$$
-        print("Great, you found a copy! Here's the $20! Look we can be done here right now if you want, but I must say I'd like to settle your Catan.")
+        print("Great, you found a copy! Here's the $20! Say, do you know any girls who think the Calculus of Variations is sexy?")
         player.player.add_elem(item.Item("Money", descriptions.money, True, None, []))
         player.player.delete_elem("Settlers of Catan")
         quest.quest_sisenor.complete_stage(quest.sisenor_moneys)
