@@ -1,0 +1,12 @@
+Things Done (August 18, 2012 --> Luna):
+	~Changed mutability to takeability in Item class, with a description of why item isn't takeable at the current time if item isn't takeable
+	~Added npc class (for people like Zoey and Javier)
+	~Added ability in World class to move an object from one room to another (for quest purposes)
+
+Things to Do (Add to/delete as fit):
+	~Edit descriptions.py to make better descriptions for objects (started)
+	~Write better introductions
+	~Write questline
+	~Implement talking to NPCs
+	~Improve npc class
+	~Implement silly actions?? (ex. laugh)
